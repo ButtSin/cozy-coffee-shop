@@ -22,7 +22,7 @@ class FormValidator {
     this.submitButtonElements = this.rootElement.querySelectorAll(
       this.selectors.submitButton,
     );
-
+    modal.show();
     this.bindEvents();
   }
 

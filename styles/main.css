@@ -1346,13 +1346,12 @@ h3,
 .modal {
   position: fixed;
   z-index: 9999;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
+  inset: 0;
+  transform: scale(0.9);
   display: flex;
   width: clamp(19.4375rem, 14.2692307692rem + 22.0512820513vw, 27.5rem);
   padding: 0;
-  margin: 0;
+  margin: auto;
   align-items: center;
   justify-content: center;
   border: var(--border);
@@ -1363,10 +1362,8 @@ h3,
   transition-duration: var(--transition-duration);
 }
 .modal[open] {
-  top: 50%;
-  left: 50%;
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  transform: scale(1);
   pointer-events: auto;
 }
 .modal::backdrop {
@@ -1380,7 +1377,7 @@ h3,
 }
 @starting-style {
   .modal[open] {
-    transform: translate(-50%, -50%) scale(0.95);
+    transform: scale(0.95);
   }
   .modal[open]::backdrop {
     opacity: 0;

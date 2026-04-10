@@ -3,14 +3,13 @@
 .modal {
   position: fixed;
   z-index: 9999;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
+  inset: 0;
+  transform: scale(0.9);
 
   display: flex;
   width: fluid(440, 311);
   padding: 0;
-  margin: 0;
+  margin: auto;
   align-items: center;
   justify-content: center;
   border: var(--border);
@@ -24,10 +23,8 @@
   transition-duration: var(--transition-duration);
 
   &[open] {
-    top: 50%;
-    left: 50%;
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
 
     pointer-events: auto;
   }
@@ -46,7 +43,7 @@
 
   @starting-style {
     &[open] {
-      transform: translate(-50%, -50%) scale(0.95);
+      transform: scale(0.95);
     }
     &[open]::backdrop {
       opacity: 0;

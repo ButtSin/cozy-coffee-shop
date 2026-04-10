@@ -17,6 +17,8 @@
 
   opacity: 0;
 
+  pointer-events: none;
+
   transition-property: opacity, transform;
   transition-duration: var(--transition-duration);
 
@@ -25,6 +27,8 @@
     left: 50%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+
+    pointer-events: auto;
   }
 
   &::backdrop {

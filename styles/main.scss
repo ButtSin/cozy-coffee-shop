@@ -1,0 +1,17 @@
+@use "normalize";
+@use "ownNormalize";
+@use "fonts";
+@use "variables";
+@use "utils";
+@use "globals";
+
+@use "blocks/main-page";
+@use "blocks/header";
+@use "blocks/hero";
+@use "blocks/button";
+@use "blocks/promo-text";
+@use "blocks/gallery";
+@use "blocks/accordion";
+@use "blocks/about";
+@use "blocks/reservation";
+@use "blocks/modal";

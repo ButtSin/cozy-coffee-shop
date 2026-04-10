@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Уютная кухня</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="/styles/main.min.css" />
+    <script src="/scripts/main.js" type="module"></script>
+  </head>
+
+  <body class="main-page">
+    <header class="main-page__header header">
+      <a
+        class="header__logo"
+        href="#"
+        title="В начало страницы"
+        aria-label="В начало страницы"
+      >
+        <img
+          class="header__logo-image"
+          src="/images/logo.svg"
+          width="196"
+          height="35"
+          alt=""
+        />
+      </a>
+      <div class="header__wrapper">
+        <nav class="header__menu">
+          <ul class="header__menu-list">
+            <li class="header__menu-item">
+              <a class="header__menu-link link link--alt-color" href="#"
+                >Меню</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <a class="header__reservation-link link" href="#reservation-form">
+          К бронированию
+        </a>
+      </div>
+    </header>
+    <main class="main-page__main">
+      <section class="main-page__hero hero" aria-labelledby="hero-title">
+        <picture>
+          <source
+            media="(min-width: 480.98px)"
+            srcset="
+              /images/hero/desktop-x1.webp 1x,
+              /images/hero/desktop-x2.webp 2x
+            "
+          />
+          <source
+            srcset="
+              /images/hero/mobile-x1.webp 1x,
+              /images/hero/mobile-x2.webp 2x
+            "
+          />
+          <img
+            class="hero__image"
+            src="/images/hero/desktop-x2.webp"
+            alt="Интерьер уютной кухни"
+          />
+        </picture>
+        <h1 id="hero-title" class="hero__title">
+          Домашняя кухня в центре города
+        </h1>
+        <p class="hero__description">
+          Бронируйте стол онлайн — мы подготовим всё к вашему приходу.
+        </p>
+        <!-- Вместо кнопка сделал ссылку, так как это семантически корректнее -->
+        <a
+          class="hero__reservation-link button button--accent"
+          href="#reservation-form"
+        >
+          Забронировать стол
+        </a>
+      </section>
+      <p class="main-page__promo-text promo-text">
+        <span class="promo-text__description">Нравится атмосфера?</span>
+        <a class="promo-text__link booking-link" href="#reservation-form">
+          перейти к форме бронирования
+        </a>
+      </p>
+      <section
+        class="main-page__gallery gallery"
+        aria-labelledby="gallery-title"
+      >
+        <header class="gallery__header visually-hidden">
+          <h2 id="gallery-title" class="gallery__title">Галерея</h2>
+        </header>
+        <div class="gallery__body" data-js-slider-gallery>
+          <div class="gallery__slider swiper" data-js-slider-gallery-main>
+            <div
+              class="gallery__slider-wrapper swiper-wrapper"
+              data-js-slider-gallery-wrapper
+            >
+              <div class="gallery__slider-slide swiper-slide">
+                <img
+                  class="gallery__slider-image"
+                  src="/images/gallery/1-x1.webp"
+                  srcset="
+                    /images/gallery/1-x1.webp 1x,
+                    /images/gallery/1-x2.webp 2x
+                  "
+                  loading="lazy"
+                  alt="Пример блюда из меню уютной кухни"
+                  width="244"
+                  height="180"
+                />
+              </div>
+              <div class="gallery__slider-slide swiper-slide">
+                <img
+                  class="gallery__slider-image"
+                  src="/images/gallery/2-x1.webp"
+                  srcset="
+                    /images/gallery/2-x1.webp 1x,
+                    /images/gallery/2-x2.webp 2x
+                  "
+                  loading="lazy"
+                  alt="Пример блюда из меню уютной кухни"
+                  width="244"
+                  height="180"
+                />
+              </div>
+              <div class="gallery__slider-slide swiper-slide">
+                <img
+                  class="gallery__slider-image"
+                  src="/images/gallery/3-x1.webp"
+                  srcset="
+                    /images/gallery/3-x1.webp 1x,
+                    /images/gallery/3-x2.webp 2x
+                  "
+                  loading="lazy"
+                  alt="Пример блюда из меню уютной кухни"
+                  width="244"
+                  height="180"
+                />
+              </div>
+              <div class="gallery__slider-slide swiper-slide">
+                <img
+                  class="gallery__slider-image"
+                  src="/images/gallery/4-x1.webp"
+                  srcset="
+                    /images/gallery/4-x1.webp 1x,
+                    /images/gallery/4-x2.webp 2x
+                  "
+                  loading="lazy"
+                  alt="Пример блюда из меню уютной кухни"
+                  width="244"
+                  height="180"
+                />
+              </div>
+              <div class="gallery__slider-slide swiper-slide">
+                <img
+                  class="gallery__slider-image"
+                  src="/images/gallery/5-x1.webp"
+                  srcset="
+                    /images/gallery/5-x1.webp 1x,
+                    /images/gallery/5-x2.webp 2x
+                  "
+                  loading="lazy"
+                  alt="Пример блюда из меню уютной кухни"
+                  width="244"
+                  height="180"
+                />
+              </div>
+              <div class="gallery__slider-slide swiper-slide">
+                <img
+                  class="gallery__slider-image"
+                  src="/images/gallery/6-x1.webp"
+                  srcset="
+                    /images/gallery/6-x1.webp 1x,
+                    /images/gallery/6-x2.webp 2x
+                  "
+                  loading="lazy"
+                  alt="Пример блюда из меню уютной кухни"
+                  width="244"
+                  height="180"
+                />
+              </div>
+              <div class="gallery__slider-slide swiper-slide">
+                <img
+                  class="gallery__slider-image"
+                  src="/images/gallery/7-x1.webp"
+                  srcset="
+                    /images/gallery/7-x1.webp 1x,
+                    /images/gallery/7-x2.webp 2x
+                  "
+                  loading="lazy"
+                  alt="Пример блюда из меню уютной кухни"
+                  width="244"
+                  height="180"
+                />
+              </div>
+              <div class="gallery__slider-slide swiper-slide">
+                <img
+                  class="gallery__slider-image"
+                  src="/images/gallery/8-x1.webp"
+                  srcset="
+                    /images/gallery/8-x1.webp 1x,
+                    /images/gallery/8-x2.webp 2x
+                  "
+                  loading="lazy"
+                  alt="Пример блюда из меню уютной кухни"
+                  width="244"
+                  height="180"
+                />
+              </div>
+              <div class="gallery__slider-slide swiper-slide">
+                <img
+                  class="gallery__slider-image"
+                  src="/images/gallery/9-x1.webp"
+                  srcset="
+                    /images/gallery/9-x1.webp 1x,
+                    /images/gallery/9-x2.webp 2x
+                  "
+                  loading="lazy"
+                  alt="Пример блюда из меню уютной кухни"
+                  width="244"
+                  height="180"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="gallery__pagination pagination"
+            data-js-slider-gallery-pagination
+          ></div>
+          <div class="gallery__slider-button-group">
+            <div
+              class="gallery__button gallery__button--prev swiper-button-prev slider-button slider-button--next"
+              data-js-slider-gallery-button-prev
+            ></div>
+            <div
+              class="gallery__button gallery__button--next swiper-button-next slider-button slider-button--prev"
+              data-js-slider-gallery-button-next
+            ></div>
+          </div>
+        </div>
+      </section>
+      <section class="main-page__about about" aria-labelledby="about-title">
+        <header class="about__header">
+          <h2 id="about-title" class="about__title">Частые вопросы</h2>
+        </header>
+        <div class="about__body">
+          <div class="accordion">
+            <details class="accordion__details" open>
+              <summary class="accordion__summary">
+                <h3 class="accordion__title">
+                  <span role="term" aria-details="faq-1">Часы работы</span>
+                </h3>
+                <span class="accordion__indicator" aria-hidden="true"> </span>
+              </summary>
+            </details>
+            <div class="accordion__content" id="faq-1" role="definition">
+              <div class="accordion__content-inner">
+                <div class="accordion__content-body">
+                  <ul class="accordion__list">
+                    <li class="accordion__list-item">
+                      <time datetime="Mo-Th 10:00-22:00"
+                        >Пн–Чт 10:00–22:00</time
+                      >
+                    </li>
+                    <li class="accordion__list-item">
+                      <time datetime="Fr-Sa 10:00-23:00"
+                        >Пт–Сб 10:00–23:00</time
+                      >
+                    </li>
+                    <li class="accordion__list-item">
+                      <time datetime="Su 11:00-21:00">Вс 11:00–21:00</time>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <details class="accordion__details" open>
+              <summary class="accordion__summary">
+                <h3 class="accordion__title">
+                  <span role="term" aria-details="faq-2">Как добраться</span>
+                </h3>
+                <span class="accordion__indicator" aria-hidden="true"> </span>
+              </summary>
+            </details>
+            <div class="accordion__content" id="faq-2" role="definition">
+              <div class="accordion__content-inner">
+                <div class="accordion__content-body">
+                  <address>
+                    м. Тверская, 5 минут пешком. Вход со двора, домофон 42.
+                  </address>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <details class="accordion__details" open>
+              <summary class="accordion__summary">
+                <h3 class="accordion__title">
+                  <span role="term" aria-details="faq-3"
+                    >Детям и особые пожелания</span
+                  >
+                </h3>
+                <span class="accordion__indicator" aria-hidden="true"> </span>
+              </summary>
+            </details>
+            <div class="accordion__content" id="faq-3" role="definition">
+              <div class="accordion__content-inner">
+                <div class="accordion__content-body">
+                  <p class="accordion__requests">
+                    Детское меню и стульчики.
+                    <strong>Сообщите об аллергиях в форме бронирования</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="reservation-form"
+        class="main-page__reservation reservation"
+        aria-labelledby="reservation-title"
+      >
+        <header class="reservation__header">
+          <h2 id="reservation-title" class="reservation__title">
+            Бронирование стола
+          </h2>
+        </header>
+        <div class="reservation__body">
+          <p class="reservation__description">
+            Заполните поля — перезвоним для подтверждения.
+          </p>
+          <form class="reservation__form" action="" method="" data-js-form>
+            <label class="reservation__label">
+              <p class="reservation__label-text">Имя</p>
+              <input
+                class="reservation__label-input"
+                data-js-form-input-text
+                type="text"
+                required
+                name="first-name"
+              />
+            </label>
+            <label class="reservation__label">
+              <p class="reservation__label-text">Фамилия</p>
+              <input
+                class="reservation__label-input"
+                data-js-form-input-text
+                type="text"
+                required
+                name="second-name"
+              />
+            </label>
+            <label class="reservation__label">
+              <p class="reservation__label-text">Email</p>
+              <input
+                class="reservation__label-input"
+                data-js-form-input-email
+                type="email"
+                required
+                name="email"
+              />
+            </label>
+            <label class="reservation__label">
+              <p class="reservation__label-text">Телефон</p>
+              <input
+                class="reservation__label-input"
+                data-js-form-input-phone
+                type="tel"
+                required
+                name="phone"
+              />
+            </label>
+            <button
+              class="reservation__button reset-button button"
+              type="submit"
+              data-js-form-button-submit
+            >
+              Отправить
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <dialog
+      class="modal"
+      data-js-reservation-modal
+      aria-labelledby="dialog-title"
+      tabindex="-1"
+    >
+      <div class="modal__inner">
+        <h2 class="modal__title">Заявка отправлена</h2>
+        <p class="modal__description">
+          Спасибо! Мы свяжемся с Вами в ближайшее время для подтверждения брони.
+        </p>
+        <button
+          class="modal__close-button button reset-button button--grey"
+          data-js-reservation-modal-close-button
+        >
+          Закрыть
+        </button>
+      </div>
+    </dialog>
+  </body>
+</html>

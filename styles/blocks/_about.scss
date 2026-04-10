@@ -1,0 +1,19 @@
+@use "../helpers/index" as *;
+
+.about {
+  &__header {
+    margin-bottom: rem(12);
+  }
+
+  &__title {
+    letter-spacing: var(--letter-spacing-xs-alt);
+
+    @include tablet {
+      font-size: rem(20);
+      letter-spacing: var(--letter-spacing-sm-alt);
+    }
+  }
+
+  &__body {
+  }
+}

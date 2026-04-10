@@ -1,0 +1,14 @@
+@use "../helpers/index" as *;
+
+.main-page {
+  &__header,
+  &__hero,
+  &__promo-text,
+  &__gallery {
+    margin-bottom: var(--container-padding-y);
+  }
+
+  &__reservation {
+    margin-top: var(--container-padding-y);
+  }
+}

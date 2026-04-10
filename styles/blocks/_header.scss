@@ -1,0 +1,68 @@
+@use "../helpers/index" as *;
+
+.header {
+  --headerMenuElementsMg: #{fluid(24, 20)};
+
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+
+    @include tablet-above {
+      display: contents;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    height: rem(35);
+    flex-shrink: 0;
+    margin-right: auto;
+
+    @include tablet {
+      margin-right: 0;
+      margin-bottom: fluid(20, 10, $tablet, $mobile);
+    }
+
+    &-image {
+      object-fit: cover;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    margin-left: calc(var(--headerMenuElementsMg) * 2);
+
+    @include tablet {
+      margin-left: 0;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--headerMenuElementsMg);
+    }
+
+    &-link {
+      letter-spacing: var(--letter-spacing-xs);
+
+      @include ensure-click-area(2.75rem, 2.75rem);
+    }
+  }
+
+  &__reservation-link {
+    margin-left: var(--headerMenuElementsMg);
+
+    letter-spacing: var(--letter-spacing-xs);
+
+    @include ensure-click-area(2.75rem, 2.75rem);
+  }
+}

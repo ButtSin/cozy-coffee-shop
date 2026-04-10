@@ -1,0 +1,103 @@
+@use "helpers" as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  padding: var(--container-padding-x);
+  margin: 0 auto;
+
+  font-family: var(--font-family-base);
+  font-size: rem(15);
+  font-weight: 600;
+  line-height: var(--line-height-lg);
+  color: var(--color-dark);
+  letter-spacing: var(--letter-spacing);
+
+  background-color: var(--color-light);
+
+  @include tablet {
+    font-size: rem(14);
+    letter-spacing: var(--letter-spacing-xs);
+  }
+}
+
+main {
+  flex-grow: 1;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+a,
+.link {
+  color: var(--color-accent);
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: var(--letter-spacing);
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+
+  @include hover {
+    color: colorToOpacity(var(--opacity-hover));
+  }
+
+  &:active {
+    color: color-blend(currentColor, var(--color-dark), 100%);
+  }
+
+  &:focus-visible {
+    outline-offset: var(--outline-offset);
+    outline: var(--outline);
+  }
+
+  &--alt-color {
+    color: var(--color-taupe);
+
+    @include hover {
+      color: colorToOpacity(var(--opacity-hover-alt));
+    }
+
+    &:active {
+      color: color-blend(currentColor, var(--color-dark), 100%);
+    }
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+h1,
+.h1 {
+  font-size: fluid(34, 24);
+  line-height: var(--line-height-md);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-xs);
+}
+
+h2,
+.h2 {
+  font-size: rem(24);
+  line-height: var(--line-height-xxl);
+  font-weight: 700;
+}
+
+h3,
+.h3 {
+  font-size: rem(16);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-xs-alt);
+
+  @include tablet {
+    font-size: rem(15);
+  }
+}

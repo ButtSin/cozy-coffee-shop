@@ -1,0 +1,15 @@
+@use "../helpers/index" as *;
+
+.promo-text {
+  line-height: var(--line-height-xl);
+  font-weight: 400;
+
+  &__description {
+    color: var(--color-taupe);
+    letter-spacing: var(--letter-spacing-xs-alt);
+  }
+
+  &__link {
+    letter-spacing: var(--letter-spacing-sm-alt);
+  }
+}

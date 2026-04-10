@@ -1,0 +1,54 @@
+@use "helpers/index" as *;
+
+:root {
+  --container-width: #{rem(960)};
+  --container-padding-x: #{fluid(48, 20)};
+  --container-padding-y: #{fluid(40, 18)};
+
+  --font-family-base: "Inter", sans-serif;
+
+  --line-height: 1;
+  --line-height-md: 1.12;
+  --line-height-lg: 1.45;
+  --line-height-xl: 1.5;
+
+  --letter-spacing-xs: #{rem(-0.2)};
+  --letter-spacing-xs-alt: #{rem(-0.05)};
+  --letter-spacing-sm: #{rem(0.4)};
+  --letter-spacing-sm-alt: #{rem(0)};
+  --letter-spacing: #{rem(0.55)};
+
+  --color-light: #faf6f1;
+  --color-white: #ffffff;
+  --color-dark: #2c2416;
+  --color-taupe: #5c5248;
+  --color-accent: #c45c3e;
+  --color-green: #5c6b4a;
+  --color-grey: #e8dfd4;
+  --color-grey-alt: #d4ccc2;
+
+  --border-radius-xxs: #{rem(6)};
+  --border-radius-xs: #{rem(8)};
+  --border-radius: #{rem(10)};
+  --border-radius-xl: #{rem(12)};
+
+  --border: 1px solid #e0d8ce;
+
+  --outline-size: #{rem(2)};
+  --outline-color: var(--color-accent);
+  --outline: var(--outline-size) solid var(--outline-color);
+  --outline-offset: #{rem(2)};
+
+  --opacity-hover: 0.8;
+  --opacity-hover-alt: 0.55;
+  --opacity-active: 0.55;
+
+  --button-width-big: #{fluid(221, 199)};
+  --button-width: #{fluid(151, 137)};
+  --button-width-little: #{fluid(118, 105)};
+  --button-height-big: #{fluid(47, 42)};
+  --button-height: #{rem(42)};
+  --button-height-little: #{fluid(42, 37)};
+
+  --transition-duration: 0.25s;
+}

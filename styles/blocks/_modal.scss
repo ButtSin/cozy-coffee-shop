@@ -1,0 +1,79 @@
+@use "../helpers/index" as *;
+
+.modal {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  border: var(--border);
+  border-radius: var(--border-radius-xl);
+
+  opacity: 0;
+
+  transition-property: opacity, transform;
+  transition-duration: var(--transition-duration);
+
+  &[open] {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+
+    transition-property: opacity;
+    transition-duration: var(--transition-duration);
+  }
+
+  &[open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    &[open] {
+      transform: translate(-50%, -50%) scale(0.95);
+    }
+    &[open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    max-width: fluid(440, 311);
+    flex-direction: column;
+    align-items: center;
+    gap: fluid(18, 14);
+    padding: fluid(32, 24);
+
+    background-color: var(--color-white);
+  }
+
+  &__title {
+    letter-spacing: var(--letter-spacing-sm);
+    line-height: var(--line-height);
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: var(--line-height-xl);
+    text-align: center;
+    color: var(--color-taupe);
+    letter-spacing: var(--letter-spacing-sm);
+
+    @include tablet {
+      font-size: rem(14);
+    }
+  }
+}

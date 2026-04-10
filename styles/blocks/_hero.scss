@@ -1,0 +1,36 @@
+@use "../helpers/index" as *;
+
+.hero {
+  --heroMarginBt: #{fluid(20, 14)};
+
+  padding-bottom: fluid(0, 60);
+
+  &__image {
+    width: 100%;
+    height: fluid(320, 200);
+    margin-bottom: fluid(20, 16);
+
+    border-radius: var(--border-radius-xl);
+
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-bottom: var(--heroMarginBt);
+  }
+
+  &__description {
+    margin-bottom: var(--heroMarginBt);
+
+    font-size: rem(16);
+    letter-spacing: var(--letter-spacing);
+    line-height: var(--line-height-xl);
+    font-weight: 400;
+
+    @include tablet {
+      font-size: rem(15);
+      line-height: var(--line-height-lg);
+      letter-spacing: var(--letter-spacing-xs);
+    }
+  }
+}

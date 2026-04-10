@@ -1,0 +1,100 @@
+@use "../helpers/index" as *;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--button-width);
+  min-height: var(--button-height-big);
+  padding: rem(14) rem(32);
+
+  color: var(--color-white);
+  font-size: rem(16);
+  font-weight: 600;
+  // line-height: var(--line-height-md);
+  // letter-spacing: var(--letter-spacing-md);
+  text-align: center;
+
+  border-radius: var(--border-radius-xs);
+  background-color: var(--color-green);
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition-property: color, background-color;
+  transition-duration: var(--transition-duration);
+
+  @include hover(itself) {
+    background-color: colorToOpacity(var(--opacity-hover), var(--color-green));
+  }
+
+  &:active {
+    background-color: color-blend(var(--color-green), var(--color-dark), 10%);
+  }
+
+  &:focus-visible {
+    outline-offset: var(--outline-offset);
+    outline: var(--outline);
+  }
+
+  &--accent {
+    width: var(--button-width-big);
+    min-height: var(--button-height-big);
+    padding: rem(14) rem(28);
+
+    background-color: var(--color-accent);
+
+    @include hover(itself) {
+      background-color: colorToOpacity(
+        var(--opacity-hover),
+        var(--color-accent)
+      );
+    }
+
+    &:active {
+      background-color: color-blend(
+        var(--color-accent),
+        var(--color-dark),
+        10%
+      );
+    }
+
+    @include tablet {
+      padding: rem(12) rem(22);
+
+      font-size: 15px;
+    }
+  }
+
+  &--grey {
+    width: var(--button-width-little);
+    min-height: var(--button-height-little);
+    padding: rem(12) rem(26);
+
+    font-weight: 600;
+    font-size: rem(15);
+    color: var(--color-dark);
+    line-height: var(--line-height);
+
+    background-color: var(--color-grey);
+
+    @include hover(itself) {
+      background-color: colorToOpacity(var(--opacity-hover), var(--color-grey));
+    }
+
+    &:active {
+      background-color: color-blend(var(--color-grey), var(--color-dark), 10%);
+    }
+
+    &:focus-visible {
+      outline-offset: var(--outline-offset);
+      outline: var(--outline);
+    }
+
+    @include tablet {
+      padding: rem(10) rem(22);
+
+      font-size: rem(14);
+    }
+  }
+}

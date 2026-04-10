@@ -1,0 +1,132 @@
+@use "../helpers/index" as *;
+
+.gallery {
+  position: relative;
+
+  padding-inline: rem(50);
+
+  @include tablet {
+    padding: 0;
+  }
+
+  &__slider {
+    margin-bottom: rem(10);
+
+    &-slide {
+      display: flex;
+      justify-content: center;
+      aspect-ratio: 61 / 45;
+
+      @include tablet {
+        aspect-ratio: 335 / 160;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+
+      border-radius: var(--border-radius);
+
+      /*
+        Считаю, что визуальное соответствие макету важнее, а потому использую cover, а не contain,
+        отдавая предпочтение пункту 6 из ТЗ: "визуальной близости к макетам". 
+      */
+      object-fit: cover;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    gap: rem(8);
+    justify-content: center;
+
+    @include mobile {
+      gap: rem(6);
+    }
+
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+
+      &:focus-visible {
+        outline-offset: var(--outline-offset);
+        outline: var(--outline);
+      }
+    }
+
+    .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+      margin: 0;
+
+      background-color: var(--color-grey-alt);
+    }
+
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      margin: 0;
+
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 45.5%;
+    left: 0%;
+    translate: fluid(0, 10) fluid(0, 6);
+
+    display: flex;
+    @include square(fluid(40, 36));
+    place-items: center;
+
+    border-radius: 50%;
+    border: var(--border);
+    background-color: var(--color-white);
+
+    transition-property: background-color;
+    transition-duration: var(--transition-duration);
+
+    @include hover(itself) {
+      background-color: colorToOpacity(
+        var(--opacity-hover-alt),
+        var(--color-white)
+      );
+    }
+
+    &:active {
+      background-color: color-blend(
+        var(--color-white),
+        var(--color-accent),
+        10%
+      );
+    }
+
+    &:focus-visible {
+      outline-offset: var(--outline-offset);
+      outline: var(--outline);
+    }
+
+    &::before {
+      @include abs-center;
+
+      content: "";
+      display: flex;
+      width: rem(6);
+      height: rem(11);
+
+      background-image: url("/images/icons/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &--next {
+      left: auto;
+      right: 0%;
+      translate: fluid(0, -10) fluid(0, 6);
+
+      &::before {
+        transform: scaleX(-1);
+      }
+    }
+  }
+}

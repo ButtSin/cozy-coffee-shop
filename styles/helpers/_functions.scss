@@ -1,0 +1,73 @@
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Не используйте единицы измерения при работе с функцией rem()! \
+        Передавайте аргументом только числа.';
+  }
+}
+
+@function fluid($max, $min, $max-viewport: 960, $min-viewport: 375) {
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+
+  $maxWidth: math.div($max-viewport, 16);
+  $minWidth: math.div($min-viewport, 16);
+
+  $clampMin: math.min($minSize, $maxSize);
+  $clampMax: math.max($minSize, $maxSize);
+
+  $slope: math.div($maxSize - $minSize, $maxWidth - $minWidth);
+  $yAxisIntersection: $minSize - ($slope * $minWidth);
+  $slopeVw: $slope * 100;
+
+  @return clamp(
+    #{$clampMin}rem,
+    calc(#{$yAxisIntersection}rem + #{$slopeVw}vw),
+    #{$clampMax}rem
+  );
+}
+
+@function fluid-height($max, $min, $max-viewport: 1080, $min-viewport: 840) {
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+
+  $maxHeight: math.div($max-viewport, 16);
+  $minHeight: math.div($min-viewport, 16);
+
+  $clampMin: math.min($minSize, $maxSize);
+  $clampMax: math.max($minSize, $maxSize);
+
+  $slope: math.div($maxSize - $minSize, $maxHeight - $minHeight);
+  $yAxisIntersection: $minSize - ($slope * $minHeight);
+  $slopeVh: $slope * 100;
+
+  @return clamp(
+    #{$clampMin}rem,
+    calc(#{$yAxisIntersection}rem + #{$slopeVh}vh),
+    #{$clampMax}rem
+  );
+}
+
+@function colorToOpacity($opacity, $color: currentColor, $var-is-number: true) {
+  @if meta.type-of($opacity) == "number" and math.is-unitless($opacity) {
+    $opacity: $opacity * 100%;
+  } @else if
+    meta.type-of($opacity) ==
+    "string" and
+    string.index(#{$opacity}, "var(")
+  {
+    @if $var-is-number {
+      $opacity: calc(#{$opacity} * 100%);
+    }
+  }
+  @return color-mix(in srgb, $color $opacity, transparent);
+}
+
+@function color-blend($base, $mix, $percent) {
+  @return color-mix(in srgb, $base, $mix $percent);
+}

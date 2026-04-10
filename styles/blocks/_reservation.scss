@@ -1,0 +1,81 @@
+@use "../helpers/index" as *;
+
+.reservation {
+  --reservationMgBottom: #{fluid(18, 14)};
+
+  padding: fluid(28, 20);
+
+  border: var(--border);
+  border-radius: var(--border-radius-xl);
+
+  &__header {
+    margin-bottom: var(--reservationMgBottom);
+  }
+
+  &__title {
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing-xs);
+
+    @include tablet {
+      font-size: rem(20);
+    }
+  }
+
+  &__description {
+    margin-bottom: var(--reservationMgBottom);
+
+    font-weight: 400;
+    font-size: rem(14);
+    letter-spacing: var(--letter-spacing-xs-alt);
+    line-height: var(--line-height-lg);
+    color: var(--color-taupe);
+
+    @include tablet {
+      letter-spacing: var(--letter-spacing-xs);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--reservationMgBottom);
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+
+    &-text {
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: var(--letter-spacing-xs);
+      line-height: 1.22;
+    }
+
+    &-input {
+      padding-inline: 0.5ch;
+      height: rem(44);
+
+      font-weight: 400;
+      font-size: rem(14);
+      letter-spacing: var(--letter-spacing-xs-alt);
+      line-height: var(--line-height-lg);
+
+      border: var(--border);
+      border-radius: var(--border-radius-xxs);
+
+      &:focus-visible {
+        outline-offset: var(--outline-offset);
+        outline: var(--outline);
+      }
+
+      &.is-error,
+      &:user-invalid {
+        color: red;
+
+        border-color: red;
+      }
+    }
+  }
+}
